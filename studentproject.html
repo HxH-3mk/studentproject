@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة وصف مشروع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4caf50, #8bc34a);
+            color: white;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            color: #FFD700;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>صفحة وصف مشروع الزراعة المستدامة</h1>
+    </header>
+
+    <div class="container">
+        <!-- النصوص -->
+        <div class="section">
+            <h2>عن المشروع</h2>
+            <p>يهدف مشروع الزراعة المستدامة إلى تحسين كفاءة استخدام الموارد الطبيعية والحفاظ على البيئة لتحقيق إنتاج غذائي صحي ومستدام.</p>
+        </div>
+
+        <!-- القوائم المتغيرة -->
+        <div class="section">
+            <h2>أنواع المحاصيل</h2>
+            <ul id="crop-list">
+                <li>القمح</li>
+                <li>الأرز</li>
+                <li>الذرة</li>
+            </ul>
+            <input type="text" id="new-crop" placeholder="أضف محصول جديد">
+            <button onclick="addCrop()">إضافة</button>
+        </div>
+
+        <!-- الصور -->
+        <div class="section">
+            <h2>معرض الصور</h2>
+            <div class="image-gallery">
+                <img src="https://via.placeholder.com/200?text=محصول+1" alt="صورة محصول 1">
+                <img src="https://via.placeholder.com/200?text=محصول+2" alt="صورة محصول 2">
+                <img src="https://via.placeholder.com/200?text=محصول+3" alt="صورة محصول 3">
+            </div>
+        </div>
+
+        <!-- الفيديو -->
+        <div class="section">
+            <h2>فيديو توضيحي</h2>
+            <iframe src="https://www.youtube.com/embed/9RB8zR0wLB8" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function addCrop() {
+            const newCrop = document.getElementById('new-crop').value;
+            if (newCrop) {
+                const list = document.getElementById('crop-list');
+                const listItem = document.createElement('li');
+                listItem.textContent = newCrop;
+                list.appendChild(listItem);
+                document.getElementById('new-crop').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
