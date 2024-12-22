@@ -9,19 +9,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #4caf50, #8bc34a);
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
             color: white;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
+            border-bottom: 3px solid #FFD700;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .container {
@@ -35,11 +42,19 @@
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .section h2 {
             color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
         }
 
         ul {
@@ -48,33 +63,48 @@
         }
 
         ul li {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
+            font-size: 1.1rem;
         }
 
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
+            justify-content: center;
         }
 
         .image-gallery img {
-            width: 200px;
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            animation: zoomIn 1.5s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
         }
 
         iframe {
             display: block;
             margin: 20px auto;
             width: 100%;
-            max-width: 600px;
-            height: 315px;
+            max-width: 700px;
+            height: 400px;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         input, button {
@@ -109,6 +139,12 @@
             <p>يهدف مشروع الزراعة المستدامة إلى تحسين كفاءة استخدام الموارد الطبيعية والحفاظ على البيئة لتحقيق إنتاج غذائي صحي ومستدام.</p>
         </div>
 
+        <div class="section">
+            <h2>أهمية الزراعة والمحاصيل في السعودية</h2>
+            <p>تعتبر الزراعة من القطاعات الاقتصادية المهمة في المملكة العربية السعودية، حيث تساهم في تحقيق الأمن الغذائي وتقليل الاعتماد على الواردات الزراعية. تتنوع المحاصيل الزراعية في المملكة وتشمل القمح، التمر، الطماطم، والفواكه المتنوعة، مما يساهم في دعم الاقتصاد الوطني وتوفير فرص العمل.</p>
+            <p>بفضل التقنيات الحديثة والمشاريع الزراعية المستدامة، حققت السعودية تقدمًا كبيرًا في تحسين الإنتاجية الزراعية واستغلال الموارد المائية بشكل فعال.</p>
+        </div>
+
         <!-- القوائم المتغيرة -->
         <div class="section">
             <h2>أنواع المحاصيل</h2>
@@ -125,9 +161,9 @@
         <div class="section">
             <h2>معرض الصور</h2>
             <div class="image-gallery">
-                <img src="https://via.placeholder.com/200?text=محصول+1" alt="صورة محصول 1">
-                <img src="https://via.placeholder.com/200?text=محصول+2" alt="صورة محصول 2">
-                <img src="https://via.placeholder.com/200?text=محصول+3" alt="صورة محصول 3">
+                <img src="https://alkhadraasy.com/wp-content/uploads/2019/05/303.jpg" alt="محصول 1">
+                <img src="https://modernagritec.com/wp-content/uploads/2024/04/brand-page-hero-630x300-1.webp" alt="محصول 2">
+                <img src="https://cdn.alweb.com/thumbs/planting/article/fit710x532/%D8%A3%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B5%D9%8A%D9%84-%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A%D8%A9.jpg" alt="محصول 3">
             </div>
         </div>
 
